@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@featherscloud/pinion": "^0.5.4"
+  },
+  "dependencies": {
+    "eta": "^3.5.0"
+  }
+}
