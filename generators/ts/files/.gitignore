@@ -1,0 +1,17 @@
+# .gitignore
+# 这是一个Node.js项目的Git忽略文件
+
+## Ignoring TypeScript Compilation Files
+# node_modules/ 和 src/ 目录下的编译文件
+node_modules/
+
+## Ignoring Temporary Build Files
+# 在构建过程中创建的临时文件
+temp*
+
+# 如果使用Yarn, 忽略yarn.lock
+*yarn.lock
+
+# 自动化构建工具的输出（如Jenkins、Travis CI）
+# 常见的是build.log或log.txt
+ build.log

@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.6"
+  },
+  "type": "module",
+  "devDependencies": {
+    "tsx": "^4.7.2"
+  }
+}
