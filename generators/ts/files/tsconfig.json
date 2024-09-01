@@ -21,6 +21,6 @@
       // You can also specify typescript versions
      "types": ["node"] // If you're using TypeScript
     },
-    "include": ["files/src/**/*"], // Specify files to be compiled
+    "include": ["src/**/*"], // Specify files to be compiled
     "exclude": ["node_modules"] // Exempt certain directories from compilation
   }

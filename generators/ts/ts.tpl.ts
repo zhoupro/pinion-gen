@@ -5,8 +5,11 @@ import {
     copyFiles,
     fromFile,
     prompt,
+    renderTemplate,
     toFile
   } from '@featherscloud/pinion'
+
+import { Eta } from "eta"
 
   // A Context interface. (This one is empty)
 interface Context extends PinionContext {
@@ -18,8 +21,14 @@ const program = new Command()
   .option('-n, --name <name>', 'Name of your app')
 
 
+
+function packageEta(ctx:Context) {
+  const eta = new Eta({ views: __dirname });
+  const res = eta.render("./files/package.json",ctx);
+  return res;
+}
   
-  export function generate(init: PinionContext) {
+  export function generate(init: Context) {
      return Promise.resolve(init)
         .then(commander(program))
         .then(
@@ -33,8 +42,11 @@ const program = new Command()
                 },
             }
             })
-        ).then( (context)=>{
-            copyFiles(fromFile(__dirname, 'files/'), toFile(`./${context.name}`))
-            }
-        )
+        ).then( 
+              copyFiles(fromFile(__dirname, 'files'), toFile('./'),{force:true})
+              // const eta = new Eta({ views: __dirname });
+              // const packageText = eta.render("./files/package.json",context);
+              //renderTemplate(packageText, toFile('package.json'))
+        ).
+        then(renderTemplate(packageEta, toFile('package.json'),{force:true}))
   }
