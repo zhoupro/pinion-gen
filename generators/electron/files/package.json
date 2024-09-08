@@ -1,0 +1,9 @@
+{
+  "name": "<%= it.name %>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start":  "concurrently \"cd main && yarn start\" \"cd app && yarn start\"" 
+  }
+}
