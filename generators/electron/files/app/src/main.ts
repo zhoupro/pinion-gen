@@ -1,7 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 import path from 'path';
-import { Handle } from './codes/handle';
-
+import { Handle, staticServer } from './codes/handle';
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
@@ -9,6 +8,7 @@ if (require('electron-squirrel-startup')) {
 
 const createWindow = async () => {
   await Handle()
+  await staticServer()
 
   // Create the browser window.
   const mainWindow = new BrowserWindow({
