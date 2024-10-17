@@ -1,0 +1,18 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private":true,
+  "workspaces":[
+    "app",
+    "main"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start":  "concurrently \"cd main && yarn start\" \"cd app && yarn start\"" ,
+    "start:prod":  "export ENV=prod && cd main && yarn build &&  cp -r dist/* ../app/public/ && cd ../app && yarn start"  
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
