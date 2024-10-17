@@ -25,8 +25,10 @@ const program = new Command()
 
 
 function packageEta(ctx:Context) {
-  const eta = new Eta({ views: __dirname });
-  const res = eta.render("./files/package.json",ctx);
+  let packagePath = getRootPackagesPath() 
+  let parentPath = getPathLastName(__dirname)
+  const eta = new Eta({ views: `${packagePath}/${parentPath}` });
+  const res = eta.render("./package.json",ctx);
   return res;
 }
   
