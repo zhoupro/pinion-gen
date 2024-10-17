@@ -7,12 +7,12 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "启动程序",
+            "name": "gen debug",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "runtimeExecutable": "yarn",
-            "runtimeArgs": ["pinion", "generators/demo/gen.tpl.ts"],
+            "runtimeArgs": ["pinion", "generators/ts/gen.tpl.ts"],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
         }
