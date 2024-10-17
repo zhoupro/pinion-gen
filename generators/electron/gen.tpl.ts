@@ -10,6 +10,7 @@ import {
   } from '@featherscloud/pinion'
 
 import { Eta } from "eta"
+import { getPathLastName, getRootPackagesPath } from '../../utils/path'
 
   // A Context interface. (This one is empty)
 interface Context extends PinionContext {
@@ -23,12 +24,16 @@ const program = new Command()
 
 
 function packageEta(ctx:Context) {
-  const eta = new Eta({ views: __dirname });
-  const res = eta.render("./files/package.json",ctx);
+  let packagePath = getRootPackagesPath() 
+  let parentPath = getPathLastName(__dirname)
+  const eta = new Eta({ views: `${packagePath}/${parentPath}` });
+  const res = eta.render("./package.json",ctx);
   return res;
 }
   
   export function generate(init: Context) {
+    let packagePath = getRootPackagesPath() 
+    let parentPath = getPathLastName(__dirname)
      return Promise.resolve(init)
         .then(commander(program))
         .then(
@@ -43,7 +48,7 @@ function packageEta(ctx:Context) {
             }
             })
         ).then( 
-              copyFiles(fromFile(__dirname, 'files'), toFile('./'),{force:true})
+              copyFiles(fromFile(packagePath, parentPath), toFile('./'),{force:true})
               // const eta = new Eta({ views: __dirname });
               // const packageText = eta.render("./files/package.json",context);
               //renderTemplate(packageText, toFile('package.json'))
