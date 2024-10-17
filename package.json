@@ -6,5 +6,8 @@
   ],
   "devDependencies": {
     "@featherscloud/pinion": "^0.5.4"
+  },
+  "scripts": {
+    "pinion":  "pinion" 
   }
 }
