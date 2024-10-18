@@ -5,7 +5,7 @@
     "packages/*/*"
   ],
   "devDependencies": {
-    "@featherscloud/pinion": "^0.5.4"
+    "@featherscloud/pinion": "^0.5.5"
   },
   "scripts": {
     "pinion":  "pinion" 
