@@ -1,11 +1,14 @@
 {
-  "private":true,
-  "workspaces":[
+  "private": true,
+  "workspaces": [
     "packages/*",
     "packages/*/*",
     "third/pinion/packages/pinion"
   ],
-   "scripts": {
-    "pinion":  "pinion" 
+  "scripts": {
+    "pinion": "pinion"
+  },
+  "dependencies": {
+    "browser-paths": "^1.1.6"
   }
 }
