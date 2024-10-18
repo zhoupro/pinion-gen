@@ -2,12 +2,10 @@
   "private":true,
   "workspaces":[
     "packages/*",
-    "packages/*/*"
+    "packages/*/*",
+    "third/pinion/packages/pinion"
   ],
-  "devDependencies": {
-    "@featherscloud/pinion": "^0.5.5"
-  },
-  "scripts": {
+   "scripts": {
     "pinion":  "pinion" 
   }
 }

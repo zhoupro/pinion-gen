@@ -3,6 +3,7 @@ import {
     PinionContext,
     commander,
     copyFiles,
+    copyFilesWithIgnoreFileList,
     fromFile,
     prompt,
     renderTemplate,
@@ -49,10 +50,10 @@ function packageEta(ctx:Context) {
             }
             })
         ).then( 
-              copyFiles(fromFile(packagePath, parentPath), toFile('./'),{force:true})
+              copyFilesWithIgnoreFileList(fromFile(packagePath, parentPath), toFile('./gen_demo'),{force:true,ignoreList:[".gitignore"]})
               // const eta = new Eta({ views: __dirname });
               // const packageText = eta.render("./files/package.json",context);
               //renderTemplate(packageText, toFile('package.json'))
         ).
-        then(renderTemplate(packageEta, toFile('package.json'),{force:true}))
+        then(renderTemplate(packageEta, toFile('./gen_demo/package.json'),{force:true}))
   }
