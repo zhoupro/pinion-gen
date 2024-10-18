@@ -12,7 +12,7 @@
                 "<node_internals>/**"
             ],
             "runtimeExecutable": "yarn",
-            "runtimeArgs": ["pinion", "generators/ts/gen.tpl.ts"],
+            "runtimeArgs": ["pinion", "generators/electron/gen.tpl.ts"],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
         }
