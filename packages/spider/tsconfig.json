@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "es5",
+        "es6",
+        "es2022"
+     ],
+     "target": "es2022",
+     "module": "es2022",
+     "moduleResolution": "node",
+     "outDir": "./build",
+     "emitDecoratorMetadata": true,
+     "experimentalDecorators": true,
+     "sourceMap": true,
+     "strict": false, // Enable strict type checking
+     "noImplicitAny": true, // Disallow implicit any types
+     "noUnusedParameters": false, // Warn about unused parameters
+     "resolveJsonModule": true, // Allow importing JSON files as modules
+     "esModuleInterop": true, // Allow for importing CommonJS modules with `import * as`
+     "strictPropertyInitialization": false,
+      // You can also specify typescript versions
+     "types": ["node"] // If you're using TypeScript
+    },
+    "include": ["src/**/*"], // Specify files to be compiled
+    "exclude": ["node_modules"] // Exempt certain directories from compilation
+  }

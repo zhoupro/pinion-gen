@@ -1,0 +1,23 @@
+{
+  "name": "spider",
+  "version": "1.0.0",
+  "description": "nodejs 快速启动模板",
+  "author": {
+    "name": "your name",
+    "email": "test@gmail.com",
+    "url": "http://example.com"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.6",
+    "browser-paths": "^1.1.6",
+    "eta": "^3.5.0",
+    "puppeteer-core": "^23.6.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "tsx": "^4.7.2"
+  }
+}
